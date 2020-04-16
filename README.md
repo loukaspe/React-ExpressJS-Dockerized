@@ -2,9 +2,23 @@
 
 Back-End comes with installed:
  
-a. Mongo and MongoExpress
+a. Express JS
  
-b. Redis and RedisCommander
+b. Mongo and MongoExpress
+ 
+c. Redis and RedisCommander
+
+Notable Dependencies:
+(BACK-END)
+- **Morgan** for Logging
+- **Pub** as Template Engine
+- **Dotenv** for Environmental Variables
+- **JWT** & **bcrypt** for secure User Authentication
+
+Notable **DEV** Dependencies:
+(BACK-END)
+- **jest** for Testing
+- **nodemon** for hot reloading
 
 **Installation and First Run**: 
 
