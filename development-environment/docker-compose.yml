@@ -1,5 +1,15 @@
 version: '2'
 services:
+  web:
+    build: ./builds/web
+    stdin_open: true
+    container_name: web
+    volumes:
+      - ../front-end:/app
+    ports:
+      - 3000:3000
+    environment:
+      - CHOKIDAR_USEPOLLING=true
   app:
     build: ./builds/app/
     container_name: app
