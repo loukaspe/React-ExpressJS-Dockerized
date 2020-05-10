@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const mongoose = require('mongoose');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -38,6 +39,19 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+mongoose.connect(
+    'mongodb://' + process.env.MONGO_URL,
+    {
+      user: process.env.MONGO_USERNAME,
+      pass: process.env.MONGO_PASSWORD,
+      userNewUrlParser: true
+    }
+).then( () => {
+
+}). catch( err => {
+  console.log('Error Connecting to Mongo: ' + err);
 });
 
 module.exports = app;

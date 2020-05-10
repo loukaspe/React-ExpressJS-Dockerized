@@ -44,6 +44,9 @@ services:
     hostname: mongo
     ports:
       - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
   mongoexpress:
     image: mongo-express
     hostname: mongo-express
