@@ -44,9 +44,8 @@ app.use(function(err, req, res, next) {
 mongoose.connect(
     'mongodb://' + process.env.MONGO_URL,
     {
-      user: process.env.MONGO_USERNAME,
-      pass: process.env.MONGO_PASSWORD,
-      userNewUrlParser: true
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
     }
 ).then( () => {
 
